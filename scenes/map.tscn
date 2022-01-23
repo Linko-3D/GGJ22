@@ -3,5 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://vpc20csdkcpj" path="res://world_environment.tscn" id="1_kod5g"]
 
 [node name="Map" type="Node3D"]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="WorldEnvironment" parent="." instance=ExtResource( "1_kod5g" )]
+[node name="GlobalLighting" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" parent="GlobalLighting" instance=ExtResource( "1_kod5g" )]
+
+[node name="Sun" type="DirectionalLight3D" parent="GlobalLighting"]
+transform = Transform3D(0.658742, -0.47745, 0.581464, 0, 0.772844, 0.634596, -0.752369, -0.418035, 0.509105, 6.3883, 4.27124, 0.480415)
+light_energy = 2.0
+light_indirect_energy = 2.0
