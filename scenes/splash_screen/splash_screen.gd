@@ -10,4 +10,4 @@ func _ready():
 	tween.tween_callback(load_scene)
 
 func load_scene():
-	get_tree().change_scene("res://scenes/main.tscn")
+	get_tree().change_scene("res://main.tscn")

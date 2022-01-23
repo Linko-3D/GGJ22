@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="prepa"
-run/main_scene="res://scenes/splash_screen.tscn"
+run/main_scene="res://scenes/splash_screen/splash_screen.tscn"
 config/icon="res://icon.png"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 
 [autoload]
 
-Network="*res://Network.gd"
+Network="*res://singletons/Network.gd"
 
 [display]
 

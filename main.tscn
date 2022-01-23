@@ -1,10 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs54l17tnaprk"]
+[gd_scene load_steps=5 format=3 uid="uid://8wqitpn8yx4k"]
 
-[ext_resource type="FontData" uid="uid://db0s1y5tupx46" path="res://fonts/Roboto-Medium.ttf" id="1_dvn3t"]
-[ext_resource type="Script" path="res://scenes/main.gd" id="2_e86qm"]
+[ext_resource type="FontData" uid="uid://db0s1y5tupx46" path="res://fonts/Roboto-Medium.ttf" id="1_xklp4"]
+[ext_resource type="Script" path="res://main.gd" id="2_g4o8n"]
 
 [sub_resource type="Font" id="Font_rrkld"]
-data/0 = ExtResource( "1_dvn3t" )
+data/0 = ExtResource( "1_xklp4" )
 
 [sub_resource type="Theme" id="Theme_4ka5l"]
 default_font = SubResource( "Font_rrkld" )
@@ -14,7 +14,7 @@ default_font_size = 20
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = SubResource( "Theme_4ka5l" )
-script = ExtResource( "2_e86qm" )
+script = ExtResource( "2_g4o8n" )
 __meta__ = {
 "_edit_use_anchors_": false
 }
