@@ -3,6 +3,7 @@ extends Node
 func create_server():
 	var peer = ENetMultiplayerPeer.new()
 	print(peer)
+
 func join_server():
 	print("b")
 

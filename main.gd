@@ -10,7 +10,7 @@ func _ready():
 	tween.tween_property($Credit, "modulate", Color(1, 1, 1, 1), 0.5)
 	tween.set_parallel().tween_property($Credit, "rect_position:x", 20.0, 0.5)
 
-	$Menu/LocalIP.text = "Local IP: " + Network.get_IP()
+	$Menu/LocalIP.text = "My local IP: " + Network.get_IP()
 
 func _on_quit_pressed():
 	get_tree().quit()
