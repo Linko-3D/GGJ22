@@ -7,8 +7,8 @@ func _ready():
 
 	var tween = create_tween()
 	tween.tween_property($Menu, "modulate", Color(1, 1, 1, 1), 0.5)
-	tween.tween_property($Credit, "modulate", Color(1, 1, 1, 1), 0.5)
-	tween.set_parallel().tween_property($Credit, "rect_position:x", 20.0, 0.5)
+	tween.tween_property($Credit, "modulate", Color(1, 1, 1, 1), 0.5).set_delay(0.5)
+	tween.set_parallel().tween_property($Credit, "rect_position:x", 20.0, 0.5).set_delay(0.5)
 
 	$Menu/LocalIP.text = "My local IP: " + Network.get_IP()
 
