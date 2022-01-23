@@ -12,6 +12,9 @@ __meta__ = {
 [node name="WorldEnvironment" parent="GlobalLighting" instance=ExtResource( "1_kod5g" )]
 
 [node name="Sun" type="DirectionalLight3D" parent="GlobalLighting"]
-transform = Transform3D(0.658742, -0.47745, 0.581464, 0, 0.772844, 0.634596, -0.752369, -0.418035, 0.509105, 6.3883, 4.27124, 0.480415)
+transform = Transform3D(-0.700287, -0.0467758, 0.712328, -2.68181e-08, 0.997851, 0.065525, -0.713862, 0.0458862, -0.698782, 6.3883, 4.27124, -0.877337)
 light_energy = 2.0
 light_indirect_energy = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+current = true
