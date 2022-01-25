@@ -16,5 +16,4 @@ transform = Transform3D(-0.700287, -0.0467758, 0.712328, -2.68181e-08, 0.997851,
 light_energy = 2.0
 light_indirect_energy = 2.0
 
-[node name="Camera3D" type="Camera3D" parent="."]
-current = true
+[node name="Spawn" type="Position3D" parent="."]
