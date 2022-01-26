@@ -1,6 +1,7 @@
 extends Node
 
 var map = "res://scenes/map.tscn"
+var main = "res://main.tscn"
 var player = preload("res://player/Player.tscn")
 var spawn_node = null
 
@@ -10,6 +11,7 @@ func _ready():
 	peer.peer_connected.connect(_peer_connected)
 	peer.peer_disconnected.connect(_peer_disconnected)
 	peer.connection_succeeded.connect(_connection_succeeded)
+	peer.server_disconnected.connect(_server_disconnected)
 
 func get_IP():
 	for ip in IP.get_local_addresses():
@@ -42,7 +44,12 @@ func load_game():
 	else:
 		var message = Label.new()
 		message.text = "    Server local IP:    " + get_IP()
+		message.modulate = Color(1, 1, 1, 0)
 		add_child(message)
+		
+		var tween = create_tween().set_loops(3)
+		tween.tween_property(message, "modulate", Color(1, 1, 1, 0), 0.15)
+		tween.tween_property(message, "modulate", Color(1, 1, 1, 1), 0.15)
 
 func spawn_player(id):
 	var player_instance = player.instantiate()
@@ -62,3 +69,7 @@ func _peer_connected(id):
 func _peer_disconnected(id):
 	if id != 1:
 		get_tree().get_root().find_node(str(id), true, false).queue_free()
+
+func _server_disconnected():
+	get_tree().change_scene(main)
+	multiplayer.set_multiplayer_peer(null)
