@@ -1,11 +1,12 @@
 extends Node
 
 var map = "res://scenes/map.tscn"
-var player = preload("res://player/player.tscn")
+var player = preload("res://player/Player.tscn")
+var spawn_node = null
 
 var peer = ENetMultiplayerPeer.new()
 
-func _ready():	
+func _ready():
 	peer.peer_connected.connect(_peer_connected)
 	peer.peer_disconnected.connect(_peer_disconnected)
 	peer.connection_succeeded.connect(_connection_succeeded)
@@ -33,7 +34,7 @@ func load_game():
 	
 	await get_tree().create_timer(0.01).timeout
 	
-	print( get_tree().get_root().find_node("Spawn", true, false) )
+	spawn_node = get_tree().get_root().find_node("Spawn", true, false)
 	
 	if not multiplayer.is_server():
 		spawn_player(multiplayer.get_unique_id())
@@ -41,13 +42,17 @@ func load_game():
 		var message = Label.new()
 		message.text = "    Server local IP:    " + get_IP()
 		add_child(message)
-	
+
 func spawn_player(id):
 	var player_instance = player.instantiate()
 	player_instance.name = str(id)
-	add_child(player_instance)
-	
+
 	player_instance.set_multiplayer_authority(id)
+
+	if spawn_node:
+		spawn_node.add_child(player_instance)
+	else:
+		get_tree().get_root().add_child(player_instance)
 
 func _peer_connected(id):
 	if id != 1:

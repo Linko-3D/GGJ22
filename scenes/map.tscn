@@ -16,4 +16,13 @@ transform = Transform3D(-0.700287, -0.0467758, 0.712328, -2.68181e-08, 0.997851,
 light_energy = 2.0
 light_indirect_energy = 2.0
 
+[node name="Camera3DServer" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 10)
+
 [node name="Spawn" type="Position3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+gi_mode = 1
+use_collision = true
+size = Vector3(25.0088, 0.002, 28.3685)

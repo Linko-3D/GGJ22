@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="GGJ22"
-run/main_scene="res://scenes/splash_screen/splash_screen.tscn"
+run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 
 [autoload]
 
 Network="*res://singletons/Network.gd"
+
+[display]
+
+window/size/resizable=false
 
 [rendering]
 
