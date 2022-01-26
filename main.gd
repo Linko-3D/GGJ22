@@ -6,7 +6,7 @@ func _ready():
 	$Credit.modulate = Color(1, 1, 1, 0)
 	
 	var tween = create_tween()
-	tween.tween_property($Hide, "color", Color(0, 0, 0, 0), 0.25)
+	tween.tween_property($Hide, "color", Color(0, 0, 0, 0), 0.2)
 	tween.tween_callback($Hide.hide)
 	tween.tween_property($Credit, "offset_left", 20.0, 1)
 	tween.set_parallel().tween_property($Credit, "modulate", Color(1, 1, 1, 1), 1)
