@@ -38,6 +38,7 @@ func load_game():
 	
 	if not multiplayer.is_server():
 		spawn_player(multiplayer.get_unique_id())
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	else:
 		var message = Label.new()
 		message.text = "    Server local IP:    " + get_IP()

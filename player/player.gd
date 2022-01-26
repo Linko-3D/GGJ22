@@ -14,7 +14,7 @@ func _ready():
 	$Camera3D/Direction.visible = !is_multiplayer_authority()
 
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == 2:
 		rotation.y -= deg2rad(event.relative.x / 18)
 		$Camera3D.rotation.x -= deg2rad(event.relative.y / 18)
 		$Camera3D.rotation.x = clamp($Camera3D.rotation.x, deg2rad(-90), deg2rad(90))
@@ -22,6 +22,12 @@ func _input(event):
 func _physics_process(delta):
 	if not is_multiplayer_authority():
 		return
+	
+	if Input.is_action_just_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	if Input.is_action_just_pressed("left_click"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	# Add the gravity.
 	if not is_on_floor():
