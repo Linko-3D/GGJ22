@@ -22,13 +22,13 @@ func _input(event):
 func _physics_process(delta):
 	if not is_multiplayer_authority():
 		return
-	
+
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
+
 	if Input.is_action_just_pressed("left_click"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
+
 	# Add the gravity.
 	if not is_on_floor():
 		motion_velocity.y -= gravity * delta
@@ -49,10 +49,10 @@ func _physics_process(delta):
 		motion_velocity.z = move_toward(motion_velocity.z, 0, SPEED)
 
 	move_and_slide()
-	
+
 	rpc( &"share_data", transform, $Camera3D.rotation.x )
 
-@rpc
+@rpc(unreliable)
 func share_data(player_transform, camera_rotation):
 	transform = player_transform
 	$Camera3D.rotation.x = camera_rotation

@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	$Hide.show()
-	
+
 	var tween = create_tween()
 	tween.tween_property($Hide, "color", Color(0, 0, 0, 0), 0.2)
 	tween.tween_property($Hide, "color", Color(0, 0, 0, 1), 0.2).set_delay(1)

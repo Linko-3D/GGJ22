@@ -13,8 +13,6 @@ func _ready():
 	tween.tween_property($Credit, "offset_left", 20.0, 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.set_parallel().tween_property($Credit, "modulate", Color(1, 1, 1, 1), 0.5)
 
-
-
 func _on_host_pressed():
 	Network.create_server()
 
@@ -26,7 +24,6 @@ func _on_join_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
-
 
 func _on_to_local_ip_text_submitted(new_text):
 	_on_join_pressed()
