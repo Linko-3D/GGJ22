@@ -12,7 +12,6 @@ tonemap_mode = 3
 tonemap_white = 16.0
 ssao_enabled = true
 ssil_enabled = true
-sdfgi_enabled = true
 sdfgi_use_occlusion = true
 sdfgi_read_sky_light = true
 glow_enabled = true
