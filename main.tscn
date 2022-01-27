@@ -14,10 +14,12 @@ __meta__ = {
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 40.0
-offset_top = -83.0
-offset_right = 190.0
-offset_bottom = 83.0
-text = "A game made by:"
+offset_top = -109.0
+offset_right = 499.0
+offset_bottom = 18.0
+text = "A game made by:
+- DEV: Bekhoucha Danyl
+- 3D GRAPHICS:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
