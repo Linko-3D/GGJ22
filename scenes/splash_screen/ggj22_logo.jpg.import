@@ -2,16 +2,16 @@
 
 importer="texture"
 type="StreamTexture2D"
-uid="uid://d0odb23ix1vmj"
-path="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+uid="uid://c4a5uewileqnk"
+path="res://.godot/imported/ggj22_logo.jpg-861df6299caf9057c7da8375de1567bb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=["res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"]
+source_file="res://scenes/splash_screen/ggj22_logo.jpg"
+dest_files=["res://.godot/imported/ggj22_logo.jpg-861df6299caf9057c7da8375de1567bb.stex"]
 
 [params]
 
